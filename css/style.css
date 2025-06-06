@@ -1,0 +1,94 @@
+/* css/style.css */
+
+/* Variables thème clair */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-color: #007bff;
+}
+
+/* Thème sombre */
+.dark-mode {
+  --bg-color: #111111;
+  --text-color: #ffffff;
+  --accent-color: #1e90ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+h1, h2 {
+  margin: 0.5rem 0;
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cv-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.project-card {
+  background: #f0f0f0;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+.dark-mode .project-card {
+  background: #222;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+}
+.dark-mode form input, 
+.dark-mode form textarea {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
