@@ -22,3 +22,13 @@ navLinks.forEach(link => {
     nav.classList.remove('show');
   });
 });
+
+// Fermer le menu si on clique en dehors
+document.addEventListener('click', (e) => {
+  const isClickInsideMenu = nav.contains(e.target);
+  const isClickOnBurger = burger.contains(e.target);
+
+  if (!isClickInsideMenu && !isClickOnBurger) {
+    nav.classList.remove('show');
+  }
+});
