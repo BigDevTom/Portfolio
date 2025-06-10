@@ -1,6 +1,4 @@
-/* css/style.css */
-
-/* Variables thème clair */
+/* Thème clair par défaut */
 :root {
   --bg-color: #ffffff;
   --text-color: #111111;
@@ -14,6 +12,7 @@
   --accent-color: #1e90ff;
 }
 
+/* Base */
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +22,7 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -32,16 +32,45 @@ header {
   color: white;
 }
 
+/* Navigation */
+nav {
+  background-color: var(--accent-color);
+  padding: 0.5rem 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 h1, h2 {
   margin: 0.5rem 0;
 }
 
-section {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
+/* CV button */
 .cv-button {
   display: inline-block;
   margin-top: 1rem;
@@ -52,17 +81,54 @@ section {
   border-radius: 5px;
 }
 
-.project-card {
-  background: #f0f0f0;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-}
-.dark-mode .project-card {
-  background: #222;
+/* Compétences */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 1rem;
 }
 
-form input, form textarea {
+.skills-list li {
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.dark-mode .skills-list li {
+  background-color: #222;
+  color: white;
+}
+
+/* Projets */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.dark-mode .project-card {
+  background-color: #222;
+}
+
+/* Formulaire */
+form input,
+form textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
@@ -71,7 +137,8 @@ form input, form textarea {
   border-radius: 4px;
   background: white;
 }
-.dark-mode form input, 
+
+.dark-mode form input,
 .dark-mode form textarea {
   background: #333;
   color: white;
@@ -87,8 +154,52 @@ button {
   cursor: pointer;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+#burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav li {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nav-container {
+    position: relative;
+  }
 }

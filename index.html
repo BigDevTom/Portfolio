@@ -8,8 +8,20 @@
 </head>
 <body>
     <header>
-       <button id="theme-toggle">🌙</button>
+       <button id="theme-toggle" aria-label="Changer le thème">🌙</button>
+       <button id="burger-menu" aria-label="Ouvrir le menu">☰</button>
     </header>
+
+    <div class="nav-container">
+        <nav>
+            <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <section id="about">
         <h2>À propos</h2>
@@ -23,6 +35,17 @@
         <!-- <a href="" download class="cv-button">Télécharger mon CV</a> -->
     </section>
 
+    <section id="skills">
+        <h2>Compétences</h2>
+            <ul class="skills-list">
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript / React</li>
+                <li>Node.js / Express</li>
+                <li>Git / GitHub</li>
+                <li>SQL / MongoDB</li>
+            </ul>
+    </section>
+
     <section id="projects">
         <h2>Projets</h2>
         <div class="project-list">
@@ -31,6 +54,12 @@
             <h3>Titre du projet</h3>
             <p>Description rapide du projet</p>
             <p><strong>Stack :</strong> HTML, CSS, JS</p>
+            <a href="#">Voir le projet</a>
+        </div>
+        <div class="project-card">
+            <h3>Deuxième projet</h3>
+            <p>Un autre exemple de projet à présenter</p>
+            <p><strong>Stack :</strong> React, Node.js</p>
             <a href="#">Voir le projet</a>
         </div>
         </div>
